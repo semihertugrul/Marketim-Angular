@@ -515,6 +515,27 @@
     tree-kill "1.2.0"
     webpack-sources "1.2.0"
 
+"@ngxs/devtools-plugin@^3.4.3-dev.master-3528deb":
+  version "3.4.3-dev.master-3528deb"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.4.3-dev.master-3528deb.tgz#b11767fcc1fdd185458bb622a104a9c21591972e"
+  integrity sha512-PapM7ofcenUQ2puNfpzwWTAJqX0gzBXzYlSJWY6jMBvjyq8NNg6e75Mf09q6iHmaM60a9oaMXmIGpNL/Cbm2Yw==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/logger-plugin@^3.4.3-dev.master-3528deb":
+  version "3.4.3-dev.master-3528deb"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.4.3-dev.master-3528deb.tgz#c1c8313037f9a5b2271a64618b915e8a2005a906"
+  integrity sha512-iy8oxERMkggH+rgarEPHaiMD7eJgppdKGhymLMUNPT21H48Jx705Xpw0M6pO8EDshcgXMtNaGIHt6qbTHnamIQ==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/store@^3.4.3-dev.master-6196ed8":
+  version "3.4.3-dev.master-6196ed8"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.4.3-dev.master-6196ed8.tgz#ac72017e3f8b18c17eb67730924ec998f53d9afc"
+  integrity sha512-LjyeghghdZVkOGIDgGsye1zySH8ZwVf2li/Z7Clu5pmlruP4HQVNdYJZWtBSc0uZ5sxmWq8I2GDOgRtFsOPMwQ==
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@7.0.7":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.0.7.tgz#2aabf02779b1e5c6035135a652b5402f5785eae6"
