@@ -21,7 +21,7 @@ import { MenuState } from './store/states/menu.state';
     HttpClientModule,
     NgxsModule.forRoot([MenuState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot(),
+    // NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
