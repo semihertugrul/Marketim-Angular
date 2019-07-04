@@ -1,44 +1,36 @@
-<div *ngIf="{ category: category$ | async } as data" class="row demo-row">
-  <div class="col">
-    <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
-      <a class="navbar-brand" href="#">Marketim</a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
-      <div class="collapse navbar-collapse" id="navbar-collapse-01">
-        <ul class="nav navbar-nav mr-auto">
-          <li *ngFor="let menu of data?.category" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ menu.Name }}</a>
-            <ul class="dropdown-menu">
-              <li *ngFor="let subCategory of menuSubCategory(menu.Id) | async">
-                <a href="#">{{ subCategory.Name }}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <!-- <ul class="nav navbar-nav mr-auto">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Meyve & Sebze</a>
-
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">İçecek</a>
-            <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
-              <li><a href="#">Su</a></li>
-              <li><a href="#">Gazlı İçecek</a></li>
-              <li><a href="#">Gazsız İçecek</a></li>
-              <li><a href="#">Maden Suları</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Temizlik</a>
-            <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
-              <li><a href="#">Bulaşık</a></li>
-              <li><a href="#">Çamaşır</a></li>
-            </ul>
-          </li>
-        </ul> -->
-      </div>
-    </nav>
+<nav *ngIf="{ category: category$ | async } as data" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Marketim</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li *ngFor="let menu of data?.category" class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ menu.Name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a *ngFor="let subCategory of menuSubCategory(menu.Id) | async" class="dropdown-item" href="#">{{
+            subCategory.Name
+          }}</a>
+        </div>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>

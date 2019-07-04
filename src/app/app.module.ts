@@ -12,9 +12,10 @@ import { CardComponent } from './shared/card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuService } from './store/services';
 import { MenuState } from './store/states/menu.state';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CardComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, CardComponent, HeaderComponent, SliderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
