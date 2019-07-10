@@ -1,2 +1,17 @@
-<app-slider></app-slider>
-<app-card></app-card>
+<div class="row mb-2">
+  <div class="col">
+    <app-slider></app-slider>
+  </div>
+</div>
+
+<div class="card text-center ">
+  <div class="card-header">Popüler Ürünler</div>
+  <div class="card-body">
+    <div *ngIf="{ allProduct: allProduct$ | async } as data" class="row mb-3">
+      <div *ngFor="let product of data.allProduct" class="col">
+        <app-card [productName]="product?.Name" [fee]="product?.fee"></app-card>
+      </div>
+    </div>
+    <button type="button" class="btn btn-info">Tümünü Gör</button>
+  </div>
+</div>

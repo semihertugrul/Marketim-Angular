@@ -1,8 +1,8 @@
-<div class="card">
-  <img src="https://picsum.photos/150/100" class="card-img-top" alt="..." />
+<div class="card mb-2">
+  <img src="https://picsum.photos/240/150" class="card-img-top" alt="..." />
   <div class="card-body text-center">
-    <h5 class="card-title">{{ cardTitle }}</h5>
-    <p class="card-text">{{ cardBody }}</p>
-    <a href="#" class="btn btn-primary">Sepete Ek</a>
+    <h4 class="card-title">{{ productName }}</h4>
+    <p class="card-text">{{ fee }} <fa-icon [icon]="['fas', 'lira-sign']"></fa-icon></p>
+    <button type="button" class="btn btn-primary"><fa-icon [icon]="['fas', 'cart-plus']"></fa-icon> Sepete Ekle</button>
   </div>
 </div>

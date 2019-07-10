@@ -7,20 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faLiraSign } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import { faCanadianMapleLeaf, faTwitter, fa500px } from '@fortawesome/free-brands-svg-icons';
+import { fa500px } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faCalendar, faCoffee, faCanadianMapleLeaf, faTwitter, fa500px);
+library.add(faCartPlus, faLiraSign);
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './shared/card/card.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuService } from './store/services';
-import { MenuState } from './store/states/menu.state';
 import { SliderComponent } from './slider/slider.component';
+import { MenuState, ProductState } from './store/states';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CardComponent, HeaderComponent, SliderComponent],
@@ -28,7 +27,7 @@ import { SliderComponent } from './slider/slider.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([MenuState]),
+    NgxsModule.forRoot([MenuState, ProductState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot(),
     FontAwesomeModule,

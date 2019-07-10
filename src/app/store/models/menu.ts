@@ -1,18 +1,16 @@
 export namespace Menu {
   export interface State {
-    category: MenuCategoryResponse[];
-    subCategory: MenuSubCategoryResponse[];
+    category: Category[];
+    subCategory: SubCategory[];
   }
 
-  export interface MenuCategoryResponse {
-    _id: string;
+  export interface Category {
     Id: number;
     Name: string;
   }
 
-  export interface MenuSubCategoryResponse {
-    _id: string;
-    CategoryId: MenuCategoryResponse[];
+  export interface SubCategory {
+    CategoryId: Category[];
     Name: string;
   }
 }

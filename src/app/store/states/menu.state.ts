@@ -1,9 +1,9 @@
-import { State, Action, StateContext, Selector } from '@ngxs/store';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
-import { Menu } from '../models';
-import { MENU_Defaults as defaults } from '../defaults';
-import { MenuService } from '../services';
 import { GetMenuCategory, GetMenuSubCategory } from '../actions';
+import { MENU_Defaults as defaults } from '../defaults';
+import { Menu } from '../models';
+import { MenuService } from '../services';
 
 @State<Menu.State>({
   name: 'Menu',
@@ -11,12 +11,12 @@ import { GetMenuCategory, GetMenuSubCategory } from '../actions';
 })
 export class MenuState {
   @Selector()
-  static getMenuCategory({ category }: Menu.State): Menu.MenuCategoryResponse[] {
+  static getMenuCategory({ category }: Menu.State): Menu.Category[] {
     return category;
   }
 
   @Selector()
-  static getMenuSubCategory({ subCategory }: Menu.State): Menu.MenuSubCategoryResponse[] {
+  static getMenuSubCategory({ subCategory }: Menu.State): Menu.SubCategory[] {
     return subCategory;
   }
 
@@ -25,7 +25,7 @@ export class MenuState {
   @Action(GetMenuCategory)
   getMenuCategory({ patchState }: StateContext<Menu.State>) {
     return this.menuService.getCategory().pipe(
-      tap((res: Menu.MenuCategoryResponse[]) => {
+      tap((res: Menu.Category[]) => {
         patchState({ category: res });
       }),
     );
@@ -34,7 +34,7 @@ export class MenuState {
   @Action(GetMenuSubCategory)
   getMenuSubCategory({ patchState }: StateContext<Menu.State>) {
     return this.menuService.getSubCategory().pipe(
-      tap((res: Menu.MenuSubCategoryResponse[]) => {
+      tap((res: Menu.SubCategory[]) => {
         patchState({ subCategory: res });
       }),
     );
