@@ -19,7 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { CardComponent } from './shared/card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
-import { MenuState, ProductState } from './store/states';
+import { MenuState, ProductState, MyBasketState } from './store/states';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CardComponent, HeaderComponent, SliderComponent],
@@ -27,7 +27,7 @@ import { MenuState, ProductState } from './store/states';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([MenuState, ProductState]),
+    NgxsModule.forRoot([MenuState, ProductState, MyBasketState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot(),
     FontAwesomeModule,

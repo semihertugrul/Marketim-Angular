@@ -2,7 +2,19 @@
   <img src="https://picsum.photos/240/150" class="card-img-top" alt="..." />
   <div class="card-body text-center">
     <h4 class="card-title">{{ productName }}</h4>
-    <p class="card-text">{{ fee }} <fa-icon [icon]="['fas', 'lira-sign']"></fa-icon></p>
-    <button type="button" class="btn btn-primary"><fa-icon [icon]="['fas', 'cart-plus']"></fa-icon> Sepete Ekle</button>
+    <p class="card-text">Birim Fiyatı : {{ fee }} <fa-icon [icon]="['fas', 'lira-sign']"></fa-icon></p>
+    <div class="form-group ">
+      <label>Birim/Adet</label>
+      <select id="quantity" class="form-control-sm ml-2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addBasket()">
+      <fa-icon [icon]="['fas', 'cart-plus']"></fa-icon> Sepete Ekle
+    </button>
   </div>
 </div>

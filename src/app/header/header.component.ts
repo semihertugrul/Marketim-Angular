@@ -5,7 +5,7 @@ import { GetMenuCategory, GetMenuSubCategory } from '../store/actions/menu.actio
 import { Observable } from 'rxjs';
 import { Menu } from '../store/models';
 import { map, tap, filter, takeUntil } from 'rxjs/operators';
-import { MenuState } from '../store/states';
+import { MenuState, MyBasketState } from '../store/states';
 import { GetProduct } from '../store/actions';
 
 @Component({
@@ -20,10 +20,13 @@ export class HeaderComponent implements OnInit {
   @Select(MenuState.getMenuSubCategory)
   subCategory$: Observable<Menu.SubCategory[]>;
 
+  @Select(MyBasketState)
+  myBasket$: Observable<MyBasketState>;
+
   constructor(private service: MenuService, private store: Store) {
-    this.store.dispatch(GetMenuCategory);
-    this.store.dispatch(GetMenuSubCategory);
-    this.store.dispatch(GetProduct);
+    this.store.dispatch(new GetMenuCategory());
+    this.store.dispatch(new GetMenuSubCategory());
+    this.store.dispatch(new GetProduct());
   }
 
   ngOnInit() {}
