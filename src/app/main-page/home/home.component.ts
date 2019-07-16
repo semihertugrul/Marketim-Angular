@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Product } from '../store/models';
-import { ProductState } from '../store/states';
+import { Product } from '../../store/models';
+import { ProductState } from '../../store/states';
 
 @Component({
   selector: 'app-home',

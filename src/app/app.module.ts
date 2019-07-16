@@ -15,10 +15,10 @@ library.add(faCartPlus, faLiraSign);
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './main-page/home/home.component';
 import { CardComponent } from './shared/card/card.component';
-import { HeaderComponent } from './header/header.component';
-import { SliderComponent } from './slider/slider.component';
+import { HeaderComponent } from './main-page/header/header.component';
+import { SliderComponent } from './main-page/slider/slider.component';
 import { MenuState, ProductState, MyBasketState } from './store/states';
 
 @NgModule({

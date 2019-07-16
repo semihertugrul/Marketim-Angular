@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../store/services';
+import { MenuService } from '../../store/services';
 import { Store, Select } from '@ngxs/store';
-import { GetMenuCategory, GetMenuSubCategory } from '../store/actions/menu.actions';
+import { GetMenuCategory, GetMenuSubCategory } from '../../store/actions/menu.actions';
 import { Observable } from 'rxjs';
-import { Menu } from '../store/models';
+import { Menu } from '../../store/models';
 import { map, tap, filter, takeUntil } from 'rxjs/operators';
-import { MenuState, MyBasketState } from '../store/states';
-import { GetProduct } from '../store/actions';
+import { MenuState, MyBasketState } from '../../store/states';
+import { GetProduct } from '../../store/actions';
 
 @Component({
   selector: 'app-header',
