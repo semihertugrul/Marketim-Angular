@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../../store/services';
-import { Store, Select } from '@ngxs/store';
-import { GetMenuCategory, GetMenuSubCategory } from '../../store/actions/menu.actions';
+import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Menu } from '../../store/models';
-import { map, tap, filter, takeUntil } from 'rxjs/operators';
-import { MenuState, MyBasketState } from '../../store/states';
+import { filter, map } from 'rxjs/operators';
 import { GetProduct } from '../../store/actions';
+import { GetMenuCategory, GetMenuSubCategory } from '../../store/actions/menu.actions';
+import { Menu } from '../../store/models';
+import { MenuState, MyBasketState } from '../../store/states';
 
 @Component({
   selector: 'app-header',
@@ -23,7 +22,7 @@ export class HeaderComponent implements OnInit {
   @Select(MyBasketState)
   myBasket$: Observable<MyBasketState>;
 
-  constructor(private service: MenuService, private store: Store) {
+  constructor(private store: Store) {
     this.store.dispatch(new GetMenuCategory());
     this.store.dispatch(new GetMenuSubCategory());
     this.store.dispatch(new GetProduct());
