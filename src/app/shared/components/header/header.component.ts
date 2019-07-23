@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { GetProduct } from '../../store/actions';
-import { GetMenuCategory, GetMenuSubCategory } from '../../store/actions/menu.actions';
-import { Menu } from '../../store/models';
-import { MenuState, MyBasketState } from '../../store/states';
+import { GetProduct } from '../../../store/actions';
+import { GetMenuCategory, GetMenuSubCategory } from '../../../store/actions/menu.actions';
+import { Menu } from '../../../store/models';
+import { MenuState, MyBasketState } from '../../../store/states';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
   @Select(MyBasketState)
   myBasket$: Observable<MyBasketState>;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private router: Router) {
     this.store.dispatch(new GetMenuCategory());
     this.store.dispatch(new GetMenuSubCategory());
     this.store.dispatch(new GetProduct());
@@ -35,5 +36,9 @@ export class HeaderComponent implements OnInit {
       filter(x => !!x.length),
       map(result => result.filter(x => x.CategoryId[0].Id === categoryId)),
     );
+  }
+
+  myBasket() {
+    this.router.navigate(['/mybasket']);
   }
 }

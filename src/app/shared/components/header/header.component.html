@@ -19,7 +19,6 @@
       <li *ngFor="let menu of data?.category" class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
           id="navbarDropdownMenuLink"
           role="button"
           data-toggle="dropdown"
@@ -29,15 +28,15 @@
           {{ menu.Name }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a *ngFor="let subCategory of menuSubCategory(menu.Id) | async" class="dropdown-item" href="#">{{
+          <a *ngFor="let subCategory of menuSubCategory(menu.Id) | async" class="dropdown-item">{{
             subCategory.Name
           }}</a>
         </div>
       </li>
     </ul>
-    <button class="btn btn-danger" type="button">
+    <a (click)="myBasket()" class="btn btn-danger">
       <fa-icon [icon]="['fas', 'cart-plus']"></fa-icon> Sepet
       <span class="badge badge-light">{{ data.mybasket.productNumber }}</span>
-    </button>
+    </a>
   </div>
 </nav>

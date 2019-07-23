@@ -1,0 +1,43 @@
+<div *ngIf="{ mybasket: myBasket$ | async } as data" class="row text-center">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h1>Sepetim</h1>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let basket of data.mybasket?.basket; let i = index" class="row py-3 border-bottom">
+          <div class="col-12 col-sm-3">
+            <label>{{ i + 1 }}.Ürün :</label>
+          </div>
+          <div class="col-6 col-sm-3">
+            <div class="form-inline">
+              <label>Birim/Adet</label>
+              <select class="form-control ml-2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="row">
+              <div class="col-12">{{ basket.product.Name }}</div>
+              <div class="col-12">Birim fiyatı : {{ basket.product.fee }}</div>
+            </div>
+          </div>
+          <div class="col-1">
+            <button class="btn btn-danger" type="button">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 pt-4">
+            <label>Toplam Fiyat : 120 TL</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

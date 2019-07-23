@@ -2,15 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCartPlus, faLiraSign } from '@fortawesome/free-solid-svg-icons';
-import { CardComponent } from './card/card.component';
-import { HeaderComponent } from './header/header.component';
+import { faCartPlus, faLiraSign, faTimes } from '@fortawesome/free-solid-svg-icons';
+import * as _components from './components';
 
-library.add(faCartPlus, faLiraSign);
+library.add(faCartPlus, faLiraSign, faTimes);
 
 @NgModule({
-  declarations: [CardComponent, HeaderComponent],
+  declarations: [_components.CardComponent, _components.HeaderComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [CardComponent, HeaderComponent],
+  exports: [_components.CardComponent, _components.HeaderComponent, FontAwesomeModule],
 })
 export class SharedModule {}

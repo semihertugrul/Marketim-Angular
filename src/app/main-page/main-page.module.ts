@@ -8,6 +8,5 @@ import { SliderComponent } from './slider/slider.component';
 @NgModule({
   declarations: [HomeComponent, SliderComponent],
   imports: [CommonModule, MainPageRoutingModule, SharedModule],
-  exports: [HomeComponent, SliderComponent],
 })
 export class MainPageModule {}

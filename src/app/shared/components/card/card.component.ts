@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { MyBasket, Product } from 'src/app/store/models';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { AddBasket } from 'src/app/store/actions';
+import { AddBasket } from '../../../store/actions';
+import { MyBasket, Product } from '../../../store/models';
 
 @Component({
   selector: 'app-card',

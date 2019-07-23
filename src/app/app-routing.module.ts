@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './main-page/main-page.module#MainPageModule',
   },
   {
+    path: 'mybasket',
+    loadChildren: './basket/basket.module#BasketModule',
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
