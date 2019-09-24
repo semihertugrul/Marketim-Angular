@@ -8,8 +8,8 @@ import * as _components from './components';
 library.add(faCartPlus, faLiraSign, faTimes);
 
 @NgModule({
-  declarations: [_components.CardComponent, _components.HeaderComponent],
+  declarations: [_components.CardComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [_components.CardComponent, _components.HeaderComponent, FontAwesomeModule],
+  exports: [_components.CardComponent, FontAwesomeModule],
 })
 export class SharedModule {}
