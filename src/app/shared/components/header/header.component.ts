@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   menuSubCategory(categoryId: number): Observable<Menu.SubCategory[]> {
     return this.subCategory$.pipe(
       filter(x => !!x.length),
-      map(result => result.filter(x => x.CategoryId[0].Id === categoryId)),
+      map(result => result.filter(x => x.CategoryId === categoryId)),
     );
   }
 

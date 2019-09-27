@@ -19,7 +19,7 @@ export class MyBasketState {
     patchState({
       basket: [...state.basket, payload],
       productNumber: state.productNumber + 1,
-      totalFee: state.totalFee + Number((payload.product.fee * payload.quantity).toFixed(2)),
+      totalFee: state.totalFee + Number((payload.product.Fee * payload.quantity).toFixed(2)),
     });
   }
 }

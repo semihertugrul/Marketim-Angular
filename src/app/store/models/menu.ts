@@ -9,8 +9,7 @@ export namespace Menu {
     Name: string;
   }
 
-  export interface SubCategory {
-    CategoryId: Category[];
-    Name: string;
+  export interface SubCategory extends Category {
+    CategoryId: number;
   }
 }

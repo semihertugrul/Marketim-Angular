@@ -5,11 +5,8 @@ export namespace Product {
     products: ProductResponse[];
   }
 
-  export interface ProductResponse {
-    Id: number;
-    SubCategoryId: Menu.SubCategory[];
+  export interface ProductResponse extends Menu.SubCategory {
     Name: string;
-    CategoryId: Menu.Category[];
-    fee: number;
+    Fee: number;
   }
 }

@@ -9,7 +9,7 @@
   <div class="card-body">
     <div *ngIf="{ allProduct: allProduct$ | async } as data" class="row mb-3">
       <div *ngFor="let product of data.allProduct" class="col">
-        <app-card [product]="product" [productName]="product?.Name" [fee]="product?.fee"></app-card>
+        <app-card [product]="product" [productName]="product?.Name" [fee]="product?.Fee"></app-card>
       </div>
     </div>
     <button type="button" class="btn btn-info">Tümünü Gör</button>
