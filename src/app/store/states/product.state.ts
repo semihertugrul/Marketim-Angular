@@ -23,7 +23,7 @@ export class ProductState {
   constructor(private productService: ProductService) {}
 
   @Action(GetProduct)
-  getMenuCategory({ patchState }: StateContext<Product.State>) {
+  getProduct({ patchState }: StateContext<Product.State>) {
     return this.productService.getProducts().pipe(
       tap((res: Product.ProductResponse[]) => {
         patchState({ products: res });
