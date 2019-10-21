@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { HeaderComponent } from './shared/components';
     HttpClientModule,
     NgxsModule.forRoot([MenuState, ProductState, MyBasketState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot({ key: 'SessionState' }),
+    NgxsStoragePluginModule.forRoot({ key: ['MyBasket'], storage: StorageOption.SessionStorage }),
     // NgxsLoggerPluginModule.forRoot(),
     SharedModule,
   ],

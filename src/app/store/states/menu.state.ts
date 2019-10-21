@@ -7,7 +7,7 @@ import { MenuService } from '../services';
 
 @State<Menu.State>({
   name: 'Menu',
-  defaults: defaults,
+  defaults,
 })
 export class MenuState {
   @Selector()
